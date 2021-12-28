@@ -1,5 +1,6 @@
 import React from 'react'
-import {Card} from 'react-bootstrap'
+import {Button, Card} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 function MovieCard({movie}) {
     return (
         <div>
@@ -11,6 +12,9 @@ function MovieCard({movie}) {
       {movie.description}
     </Card.Text>
     <h3>{"⭐".repeat(movie.rating)} </h3>
+    <Link to={`/details/${movie.id}`}>
+    <Button variant='warning'>See Trailer</Button>
+    </Link>
   </Card.Body>
 </Card>
         </div>
